@@ -994,6 +994,7 @@ div.prettyprint  {
     padding: 5px 10px;
     background-color: #fafafb;
     border: 1px solid #eee;
+    word-wrap: break-word;
 }
 
 b {
