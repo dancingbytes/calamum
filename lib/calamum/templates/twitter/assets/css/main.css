@@ -110,7 +110,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     vertical-align: baseline;
 }
 body {
-    line-height: 1;
     -webkit-font-smoothing: antialiased;
     font: 13px/1.5 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
     color: #555;
@@ -227,6 +226,7 @@ tr:hover td, tr:hover td.active {
 #header, #content-outer, #footer {
     width: 960px;
     margin: 0 auto;
+    line-height: 20px;
 }
 #header-outer {
     position: fixed;

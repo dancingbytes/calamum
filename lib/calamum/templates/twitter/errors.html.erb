@@ -3,7 +3,7 @@
   <head>
     <title><%= @name %></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link type="text/css" rel="stylesheet" href="assets/css/main.css" />
+    <link type="text/css" rel="stylesheet" href="main_<%= Calamum::SALT %>.css" />
   </head>
   <body class="no-sidebars">
     <div id="page">
@@ -12,9 +12,9 @@
           <a href="index.html" id="logo" title="Home"><%= @name %></a>
 
           <ul id="title-nav">
-            <li><a href="authentication.html">Авторизация</a></li>
+            <li><a href="authentication_<%= Calamum::SALT %>.html">Авторизация</a></li>
             <li><a href="index.html">Ресурсы</a></li>
-            <li><a href="errors.html">Ошибки</a></li>
+            <li><a href="errors_<%= Calamum::SALT %>.html">Ошибки</a></li>
           </ul>
         </div>
       </div>

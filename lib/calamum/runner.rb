@@ -68,10 +68,9 @@ class Calamum::Runner
     process_index
 
     process_pages
-#    process_section("overview",  @definition.get_description)
-    process_section("authentication", @definition.get_authentication)
+    process_authentication
     process_errors
-#    end
+
   rescue => ex
     puts_error ex.message
   end
@@ -103,18 +102,6 @@ class Calamum::Runner
     page.save_template('index.html', bindings)
   end
 
-  # Bind values to overview and authentication pages and save them.
-  def process_section(section, content)
-    bindings = {
-      :section => section,
-      :name => @definition.get_name,
-      :version => @definition.get_version,
-      :description => content,
-      :copyright => @definition.get_copyright
-    }
-    page = Calamum::DocGenerator.new(:section)
-    page.save_template("#{section}.html", bindings)
-  end
 
   def process_errors
     bindings = {
@@ -123,7 +110,19 @@ class Calamum::Runner
       :errors => @definition.get_errors,
     }
     page = Calamum::DocGenerator.new(:errors)
-    page.save_template("errors.html", bindings)
+    page.save_template("errors_#{Calamum::SALT}.html", bindings)
+  end
+
+  def process_authentication
+
+    bindings = {
+      :name => @definition.get_name,
+      :version => @definition.get_version,
+      :content => @definition.get_authentication,
+    }
+    page = Calamum::DocGenerator.new(:authentication)
+    page.save_template("authentication_#{Calamum::SALT}.html", bindings)
+
   end
 
   # Bind values to view pages and save them.

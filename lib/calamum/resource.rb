@@ -26,7 +26,7 @@ class Calamum::Resource
   # @return [String] resource filename
   def slug
     sanitized_uri = uri.gsub(/[^\w]/, '_').gsub('__', '_')
-    "#{sanitized_uri}_#{action.downcase}_#{self.object_id}"
+    "#{sanitized_uri}_#{action.downcase}_#{Calamum::SALT}"
   end
 
   # @override

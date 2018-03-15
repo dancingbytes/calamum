@@ -9,15 +9,18 @@ class Calamum::DocGenerator
   end
 
   def self.init_base_dir
+
     tpl_path = Calamum::Config[:tpl_path]
     doc_path = Calamum::Config[:doc_path]
     FileUtils.rm_r(doc_path, :force => true)
     Dir.mkdir(doc_path)
 
     # copy assets from template directory
-    source = File.join(tpl_path, 'assets')
-    target = File.join(doc_path, 'assets')
-    FileUtils.copy_entry(source, target)
+    source = File.join(tpl_path, 'assets', 'css', "main.css")
+    target = File.join(doc_path, "main_#{Calamum::SALT}.css")
+
+    FileUtils.cp(source, target)
+
   end
 
   def save_template(filename, values)

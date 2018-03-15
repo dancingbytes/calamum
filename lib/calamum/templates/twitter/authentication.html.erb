@@ -7,7 +7,6 @@
   </head>
   <body class="no-sidebars">
     <div id="page">
-
       <div id="header-outer">
         <div id="header">
           <a href="index.html" id="logo" title="Home"><%= @name %></a>
@@ -21,15 +20,16 @@
       </div>
 
       <div id="content-outer">
-        <h1><%= @section.capitalize %></h1>
-        <div class="content api-docs">
-          <%= @description %>
-        </div>
+
+        <h1>Авторизация</h1>
+        <%= @content %>
+
       </div>
 
       <div id="footer-outer">
         <div id="footer"><%= @copyright %></div>
       </div>
+
     </div>
   </body>
 </html>
