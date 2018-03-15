@@ -21,7 +21,8 @@ class Calamum::Runner
     :short        => '-f DEFINITION',
     :long         => '--file DEFINITION',
     :description  => 'Path to the file with JSON API definition',
-    :required     => true
+    :required     => false
+    :default      => 'docs/index.json'
 
   option :template,
     :short        => '-t TEMPLATE',
@@ -33,7 +34,7 @@ class Calamum::Runner
     :short        => '-p PATH',
     :long         => '--path PATH',
     :description  => 'Path to the directory where docs will be generated',
-    :default      => ENV['HOME']
+    :default      => 'public/'
 
   option :debug,
     :short        => '-d',
