@@ -21,7 +21,6 @@ class Calamum::Runner
     :short        => '-f DEFINITION',
     :long         => '--file DEFINITION',
     :description  => 'Path to the file with JSON API definition',
-    :required     => false
     :default      => 'docs/index.json'
 
   option :template,
