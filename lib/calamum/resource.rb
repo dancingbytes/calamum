@@ -39,7 +39,7 @@ class Calamum::Resource
       'label-info'
     when 'POST'
       'label-success'
-    when 'PUT'
+    when 'PUT', 'PATCH'
       'label-warning'
     when 'DELETE'
       'label-important'

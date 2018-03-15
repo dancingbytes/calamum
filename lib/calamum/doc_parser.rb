@@ -66,7 +66,7 @@ class Calamum::DocParser
   end
 
   def validate_resource?(resource)
-    resource['uri'] && resource['action'] && resource['description'] && %{GET POST PUT DELETE}.include?(resource['action'].upcase)
+    resource['uri'] && resource['action'] && resource['description'] && %{GET POST PUT PATCH DELETE}.include?(resource['action'].upcase)
   end
 
 end

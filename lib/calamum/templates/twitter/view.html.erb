@@ -13,10 +13,9 @@
           <a href="/" id="logo" title="Home"><%= @name %></a>
 
           <ul id="title-nav">
-            <li><a href="overview.html">Overview</a></li>
-            <li><a href="authentication.html">Authentication</a></li>
-            <li><a href="index.html">Resources</a></li>
-            <li><a href="errors.html">Errors</a></li>
+            <li><a href="authentication.html">Авторизация</a></li>
+            <li><a href="index.html">Ресурсы</a></li>
+            <li><a href="errors.html">Ошибки</a></li>
           </ul>
         </div>
       </div>
@@ -28,13 +27,13 @@
 
         <div id="content-main">
           <div class="field field-el">
-            <h2>Description</h2>
+            <h2>Описание</h2>
             <p><%= @resource.description %></p>
           </div>
 
 	  <% unless @resource.headers.empty? %>
 	  <div class="field">
-            <h2>Headers</h2>
+            <h2>Заголовки</h2>
             <div class="odd">
               <% @resource.headers.each do |key, content| %>
                 <div class="parameter">
@@ -47,7 +46,7 @@
 	  <% end %>
 
           <div class="field">
-            <h2>Parameters</h2>
+            <h2>Параметры</h2>
             <div class="odd">
               <% @resource.params.each do |key, content| %>
                 <div class="parameter">
@@ -62,16 +61,16 @@
 
           <% if @resource.request %>
             <div class="group-example-request">
-              <h2>Example Request</h2>
+              <h2>Запрос</h2>
               <div class="content">
-                <pre class="prettyprint"><%= pj @resource.request %></pre>
+                <pre class="prettyprint"><%= @resource.request %></pre>
               </div>
             </div>
           <% end %>
 
           <% if @resource.response %>
             <div class="group-example-request">
-              <h2>Example Response</h2>
+              <h2>Ответ</h2>
               <div class="content">
                 <pre class="prettyprint"><%= pj @resource.response %></pre>
               </div>
@@ -81,7 +80,7 @@
 
         <div id="sidebar-last">
           <div class="block api-doc-block">
-            <h2>Resource Information</h2>
+            <h2>Информация</h2>
             <table>
               <tbody>
                 <tr>
@@ -107,7 +106,7 @@
       </div>
 
       <div id="footer-outer">
-        <div id="footer"><%= @name %> &copy; 2013</div>
+        <div id="footer"><%= @copyright %></div>
       </div>
 
     </div>

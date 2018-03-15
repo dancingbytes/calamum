@@ -15,9 +15,6 @@ class Calamum::Config
     self.doc_path = File.join(config[:path], 'docs')
     self.tpl_path = File.join(File.dirname(__FILE__),
                               'templates',
-                              config[:template])
-    unless Calamum::VALID_TEMPLATES.include?(config[:template])
-      fail "Unknown template #{config[:template]}"
-    end
+                              'twitter')
   end
 end
