@@ -375,9 +375,6 @@ div.section {
 #content-main blockquote.node-embed {
     background-color: #F8F8F8;
     border: 1px solid #EEE;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
     color: #555;
     padding: 1em;
     font-size: 1em;
@@ -395,12 +392,9 @@ div.section {
 }
 a.version-pill {
     display: inline !important;
-    border-radius: 5px;
     padding-left: 5px;
     padding-right: 5px;
     margin-left: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
     color: #F8F8F8;
     text-decoration: none;
     background-color: #0094C2;
@@ -408,12 +402,9 @@ a.version-pill {
 }
 div.api-doc-block a.version-pill {
     border: 0px;
-    border-radius: 0px;
     padding-left: 0px;
     padding-right: 0px;
     margin-left: 0px;
-    -moz-border-radius: 0px;
-    -webkit-border-radius: 0px;
     background-color: inherit;
     color: #0094C2;
     text-decoration: none;
@@ -507,11 +498,6 @@ ul.vertical-tabs-list li {
     width: 130px;
     padding: 9px 10px;
 }
-#title-nav .expanded .last a {
-    -moz-border-radius: 0 0 6px 6px;
-    -webkit-border-radius: 0 0 6px 6px;
-    border-radius: 0 0 6px 6px;
-}
 #dropdown {
     position: absolute;
     z-index: 900;
@@ -519,9 +505,6 @@ ul.vertical-tabs-list li {
     left: 712px;
 }
 #dropdown .title {
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
     border: 1px #ccc solid;
     display: block;
     width: 208px;
@@ -529,14 +512,9 @@ ul.vertical-tabs-list li {
     margin: 0;
     font-size: 1.3em;
     color: #0094C2;
-    background: #EDEDED url(/sites/all/themes/twitter_commons/images/arrow.png) no-repeat 210px 8px;
+    background-color: #EDEDED;
 }
 #dropdown .active .title {
-    -moz-border-radius-bottomleft: 0;
-    -moz-border-radius-bottomright: 0;
-    -webkit-border-bottom-left-radius: 0;
-    -webkit-border-bottom-right-radius: 0;                                                                                                                                                                                                        border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
     border: 0;
     background: #4F4F4F;
     background: rgba(40, 40, 40, 0.8);
@@ -554,12 +532,6 @@ ul.vertical-tabs-list li {
     display: none;
     width: 238px;
     padding: 0 0 5px;
-    -moz-border-radius-bottomleft: 5px;
-    -moz-border-radius-bottomright: 5px;
-    -webkit-border-bottom-left-radius: 5px;
-    -webkit-border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
     background: #4F4F4F;
     background: rgba(40, 40, 40, 0.8);
     color: #FFF;
@@ -625,9 +597,6 @@ div.field h2 {
 .api-doc-block {
     background-color: #F8F8F8;
     padding: 10px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
 }
 .api-doc-block table {
     margin-bottom: 0;
@@ -645,6 +614,11 @@ div.field h2 {
 .api-doc-block tr:last-child td {
     border-bottom: 0 !important;
 }
+
+.group-example-request + .group-example-request {
+    margin-top:20px;
+}
+
 .group-example-request h2 {
     margin-bottom: 0.5em;
 }
@@ -693,9 +667,6 @@ div.field h2 {
     margin-bottom: 1.5em;
     border: none;
     background: #F8F8F8;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
 }
 #content-main fieldset table {
     border-top: 0;
@@ -760,11 +731,8 @@ div.field h2 {
 }
 #content-main form input, #content-main form textarea, #content-main form select {
     border: 1px solid #CCC;
-    -moz-border-radius: 4px;
     -moz-box-shadow: 0 1px 1px #EEE;
-    -webkit-border-radius: 4px;
     -webkit-box-shadow: 0 1px 1px #EEE;
-    border-radius: 4px;
     box-shadow: 0 1px 1px #EEE;
     -webkit-font-smoothing: antialiased;
     font: 13px/1.5 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
@@ -830,9 +798,7 @@ div.field h2 {
     padding: 3px 28px;
     margin-left: 25px;
     margin-bottom: 1em;
-    -moz-border-radius: 40px;
     -moz-box-shadow: 0 1px 1px #ccc;
-    -webkit-border-radius: 40px;
     -webkit-box-shadow: 0 1px 1px #ccc;
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#00A0D1', endColorstr='#008DB8')";
     background-image: -moz-linear-gradient(#00A0D1, #008DB8);
@@ -840,7 +806,6 @@ div.field h2 {
     background-color: #00A0D1;
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#00A0D1), to(#008DB8));
     border: 1px solid #095B7E;
-    border-radius: 40px;
     -webkit-font-smoothing: subpixel-antialiased;
     color: #BFE4EF;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
@@ -881,11 +846,8 @@ a.button {
     font: 13px/1.5 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
     -webkit-font-smoothing: subpixel-antialiased;
     box-shadow: 0 1px 1px #EEE;
-    -moz-border-radius: 4px;
     -moz-box-shadow: 0 1px 1px #EEE;
-    -webkit-border-radius: 4px;
     -webkit-box-shadow: 0 1px 1px #EEE;
-    border-radius: 4px;
 }
 a.button:hover {
     color: #FFF;
@@ -932,9 +894,6 @@ p.search-404 {
     background: #282828;
     background: rgba(40, 40, 40, 0.8);
     color: #FFF;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
 }
 #autocomplete ul {
     margin: 0;
@@ -1015,18 +974,10 @@ ul.book-links .next {
     border: 1px #ccc solid;
     margin-bottom: 1em;
     padding: 1em;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
 }
 .toc ol {
     margin: 0;
 }
-
-
-
-
-
 
 .page-header {
     margin-bottom: 20px;
@@ -1039,18 +990,21 @@ ul.book-links .next {
     margin-bottom: 25px;
 }
 
-pre.prettyprint  {
-    padding: 0px;
-     background-color: #fafafb;
-     border: none !important;
-     overflow-y: auto;
+div.prettyprint  {
+    padding: 5px 10px;
+    background-color: #fafafb;
+    border: 1px solid #eee;
 }
- pre .str  {
-    color: #36C;
+
+b {
+    font-weight:bold;
 }
- pre .lit  {
-    color: #c00;
+
+i {
+    font-weight: normal;
+    font-style: italic;
 }
- pre .pun  {
-    color: #999;
+
+span.red {
+    color: #00f;
 }

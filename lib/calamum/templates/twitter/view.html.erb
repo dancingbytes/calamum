@@ -23,13 +23,10 @@
       <div id="content-outer">
         <div class="page-header">
           <h1><%= @resource.action %> <%= @resource.uri %></h1>
+          <p><%= @resource.description %></p>
         </div>
 
         <div id="content-main">
-          <div class="field field-el">
-            <h2>Описание</h2>
-            <p><%= @resource.description %></p>
-          </div>
 
       	  <% unless @resource.headers.empty? %>
 
@@ -55,7 +52,7 @@
                 <% @resource.params.each do |key, content| %>
                   <div class="parameter">
                     <span class="param"><%= key %>
-                      <span><%= content['required'] ? 'обязательный параметр' : 'опционально' %>, тип: <%= content['type'] %></span>
+                      <span><%= content['required'] ? '<b>Обязательно</b>' : '<i>Опционально</i>' %>, тип: <%= content['type'] %></span>
                     </span>
                     <p><%= content['description'] %></p>
                   </div>
@@ -68,8 +65,8 @@
           <% if @resource.request %>
             <div class="group-example-request">
               <h2>Запрос</h2>
-              <div class="content">
-                <pre class="prettyprint"><%= @resource.request %></pre>
+              <div class="prettyprint">
+                <%= @resource.request %>
               </div>
             </div>
           <% end %>
@@ -77,8 +74,15 @@
           <% if @resource.response %>
             <div class="group-example-request">
               <h2>Ответ</h2>
-              <div class="content">
-                <pre class="prettyprint"><%= pj @resource.response %></pre>
+              <div class="prettyprint">
+                <%= pj @resource.response %>
+              </div>
+            </div>
+          <% else %>
+            <div class="group-example-request">
+              <h2>Ответ</h2>
+              <div class="prettyprint">
+                {}
               </div>
             </div>
           <% end %>
@@ -86,7 +90,6 @@
 
         <div id="sidebar-last">
           <div class="block api-doc-block">
-            <h2>Информация</h2>
             <table>
               <tbody>
                 <tr>
@@ -99,7 +102,7 @@
                 </tr>
                 <tr>
                   <td>Авторизация</td>
-                  <td><%= @resource.auth == 'true' ? 'требуется' : 'нет' %></td>
+                  <td><%= @resource.auth == 'true' ? '<span class="red">Обязательна</span>' : 'Не требуется' %></td>
                 </tr>
               </tbody>
             </table>
@@ -112,6 +115,5 @@
       </div>
 
     </div>
-    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
   </body>
 </html>
