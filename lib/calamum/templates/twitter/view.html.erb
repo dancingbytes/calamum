@@ -10,7 +10,7 @@
 
       <div id="header-outer">
         <div id="header">
-          <a href="/" id="logo" title="Home"><%= @name %></a>
+          <a href="index.html" id="logo" title="Home"><%= @name %></a>
 
           <ul id="title-nav">
             <li><a href="authentication.html">Авторизация</a></li>
@@ -31,33 +31,39 @@
             <p><%= @resource.description %></p>
           </div>
 
-	  <% unless @resource.headers.empty? %>
-	  <div class="field">
-            <h2>Заголовки</h2>
-            <div class="odd">
-              <% @resource.headers.each do |key, content| %>
-                <div class="parameter">
-                  <span class="param"><%= key %></span>
-                  <p><%= content %></p>
-                </div>
-              <% end %>
-            </div>
-          </div>
-	  <% end %>
+      	  <% unless @resource.headers.empty? %>
 
-          <div class="field">
-            <h2>Параметры</h2>
-            <div class="odd">
-              <% @resource.params.each do |key, content| %>
-                <div class="parameter">
-                  <span class="param"><%= key %>
-                    <span><%= content['required'] ? 'required' : 'optional' %>, type: <%= content['type'] %></span>
-                  </span>
-                  <p><%= content['description'] %></p>
-                </div>
-              <% end %>
+            <div class="field">
+              <h2>Заголовки</h2>
+              <div class="odd">
+                <% @resource.headers.each do |key, content| %>
+                  <div class="parameter">
+                    <span class="param"><%= key %></span>
+                    <p><%= content %></p>
+                  </div>
+                <% end %>
+              </div>
             </div>
-          </div>
+
+      	  <% end %>
+
+          <% unless @resource.params.empty? %>
+
+            <div class="field">
+              <h2>Параметры</h2>
+              <div class="odd">
+                <% @resource.params.each do |key, content| %>
+                  <div class="parameter">
+                    <span class="param"><%= key %>
+                      <span><%= content['required'] ? 'обязательный параметр' : 'опционально' %>, тип: <%= content['type'] %></span>
+                    </span>
+                    <p><%= content['description'] %></p>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+
+          <% end %>
 
           <% if @resource.request %>
             <div class="group-example-request">
@@ -84,20 +90,16 @@
             <table>
               <tbody>
                 <tr>
-                  <td>API Version</td>
+                  <td>Версия</td>
                   <td><%= @version %></td>
                 </tr>
                 <tr>
-                  <td>HTTP Method</td>
+                  <td>HTTP метод</td>
                   <td><%= @resource.action %></td>
                 </tr>
                 <tr>
-                  <td>Login Required</td>
-                  <td><%= @resource.auth %></td>
-                </tr>
-                <tr>
-                  <td>Response Format</td>
-                  <td>application/json</td>
+                  <td>Авторизация</td>
+                  <td><%= @resource.auth == 'true' ? 'требуется' : 'нет' %></td>
                 </tr>
               </tbody>
             </table>

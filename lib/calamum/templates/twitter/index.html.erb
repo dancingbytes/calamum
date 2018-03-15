@@ -9,7 +9,7 @@
     <div id="page">
       <div id="header-outer">
         <div id="header">
-          <a href="/" id="logo" title="Home"><%= @name %></a>
+          <a href="index.html" id="logo" title="Home"><%= @name %></a>
 
           <ul id="title-nav">
             <li><a href="authentication.html">Авторизация</a></li>
@@ -20,18 +20,17 @@
       </div>
 
       <div id="content-outer">
-        <h1>REST API v.<%= @version %></h1>
+        <h1>Версия v.<%= @version %></h1>
         <div class="content api-docs">
           <% @resources.each do |name, endpoints| %>
             <table>
               <caption>
                 <strong><%= name.capitalize %></strong>
-                <p>These endpoints belong to the <%= name %> resource.</p>
               </caption>
               <thead>
                 <tr>
-                  <th class="views-field-title">Resource</th>
-                  <th class="views-field-title">Description</th>
+                  <th class="views-field-title">Ресурс</th>
+                  <th class="views-field-title">Описание</th>
                 </tr>
               </thead>
               <tbody>
