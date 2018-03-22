@@ -990,13 +990,6 @@ ul.book-links .next {
     margin-bottom: 25px;
 }
 
-div.prettyprint  {
-    padding: 5px 10px;
-    background-color: #fafafb;
-    border: 1px solid #eee;
-    word-wrap: break-word;
-}
-
 b {
     font-weight:bold;
 }
@@ -1008,4 +1001,20 @@ i {
 
 span.red {
     color: #f00;
+}
+
+pre.prettyprint  {
+    padding: 5px 10px !important;
+    background-color: #fafafb;
+    border: 1px solid #eee;
+    overflow-y: auto;
+}
+pre .str  {
+    color: #36C;
+}
+pre .lit  {
+    color: #c00;
+}
+pre .pun  {
+    color: #999;
 }

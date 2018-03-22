@@ -65,25 +65,21 @@
           <% if @resource.request %>
             <div class="group-example-request">
               <h2>Запрос</h2>
-              <div class="prettyprint">
-                <%= @resource.request %>
-              </div>
+              <pre class="prettyprint"><%= @resource.request %></pre>
             </div>
           <% end %>
 
           <% if @resource.response %>
             <div class="group-example-request">
               <h2>Ответ</h2>
-              <div class="prettyprint">
-                <%= @resource.response %>
-              </div>
+              <pre class="prettyprint lang-js"><%= pj @resource.response %></pre>
             </div>
           <% else %>
             <div class="group-example-request">
               <h2>Ответ</h2>
-              <div class="prettyprint">
+              <pre class="prettyprint lang-js">
                 {}
-              </div>
+              </pre>
             </div>
           <% end %>
         </div>
@@ -116,4 +112,5 @@
 
     </div>
   </body>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </html>

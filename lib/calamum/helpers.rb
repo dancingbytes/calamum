@@ -4,8 +4,10 @@
 # @param indent [String] indent that used in formatting
 # @return [String] prettier form of the given JSON string
 def pj(json, indent = '&nbsp;')
+
   require 'json'
-  JSON.pretty_generate(json, :indent => indent * 4).gsub!(/\n/, '<br/>')
+  JSON.pretty_generate(json, indent: indent * 4).gsub!(/\n/, '<br/>')
+
 end
 
 # Output info message to console.
