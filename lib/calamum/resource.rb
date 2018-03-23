@@ -2,23 +2,34 @@
 # It contains attributes from parsed definition.
 # So anywhere in view template we can use this object.
 class Calamum::Resource
-  attr_accessor :uri, :action, :headers,
-    :auth, :params, :errors, :description, :request, :response, :tryit
+
+  attr_accessor :uri,
+                :action,
+                :headers,
+                :auth,
+                :params,
+                :errors,
+                :description,
+                :request,
+                :response,
+                :error_format
 
   # Initialize object from attributes.
   #
   # @param attrs [Hash] attributes to set
   def initialize(attrs)
-    @uri = attrs['uri']
-    @action = attrs['action'].upcase
-    @headers = attrs['headers'] || {}
-    @auth = [true, 'true', 1, '1'].include?(attrs['auth'])
-    @params = attrs['params'] || {}
-    @errors = attrs['errors'] || {}
-    @description = attrs['description']
-    @request = attrs['request']
-    @response = attrs['response']
-    @tryit = attrs['tryit']
+
+    @uri            = attrs['uri']
+    @action         = attrs['action'].upcase
+    @headers        = attrs['headers'] || {}
+    @auth           = [true, 'true', 1, '1'].include?(attrs['auth'])
+    @params         = attrs['params'] || {}
+    @errors         = attrs['errors'] || {}
+    @description    = attrs['description']
+    @request        = attrs['request']
+    @response       = attrs['response']
+    @error_format   = attrs['error_format']
+
   end
 
   # Returns a unique, but readable name for this resource suitable for use as a filename

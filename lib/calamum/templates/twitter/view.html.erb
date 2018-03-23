@@ -80,6 +80,41 @@
               <pre class="prettyprint lang-js">{}</pre>
             </div>
           <% end %>
+
+
+          <% if @resource.error_format %>
+            <div class="group-example-error">
+              <h2>Формат ошибок</h2>
+              <pre class="prettyprint lang-js"><%= pj @resource.error_format %></pre>
+            </div>
+          <% end %>
+
+          <% unless @resource.errors.empty? %>
+            <table>
+              <caption>
+                <strong>Ошибки</strong>
+              </caption>
+              <thead>
+                <tr>
+                  <th class="views-field-title">Код</th>
+                  <th class="views-field-title">Описание</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @resource.errors.each do |error| %>
+                  <tr>
+                    <td class="">
+                      <%= error['code'] %>
+                    </td>
+                    <td class="views-field">
+                      <%= error['description'] %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          <% end %>
+
         </div>
 
         <div id="sidebar-last">
